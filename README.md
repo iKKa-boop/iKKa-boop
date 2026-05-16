@@ -129,9 +129,7 @@ Zero-dependency client-side deployment.
 
 <div align="center">
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=iKKa-boop&show_icons=true&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=58a6ff&icon_color=3fb950&text_color=8b949e)
-
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=iKKa-boop&layout=compact&theme=github_dark&hide_border=true&bg_color=0d1117&title_color=58a6ff&text_color=8b949e)
+![GitHub Streak](https://streak-stats.demolab.com?user=iKKa-boop&theme=github-dark&hide_border=true&background=0d1117&ring=58a6ff&fire=3fb950&currStreakLabel=58a6ff)
 
 </div>
 
