@@ -20,8 +20,6 @@
 
 DevOps engineer. Containers, pipelines, server infra — building systems that stay up and scale without drama.
 
-Currently running **DeutschMeister** (Dockerized Next.js + NestJS + PostgreSQL) and wiring up CI/CD pipelines for production workloads.
-
 ---
 
 ## `// containers & infra`
@@ -42,20 +40,10 @@ Currently running **DeutschMeister** (Dockerized Next.js + NestJS + PostgreSQL) 
 
 ## `// server management`
 
-![Port Management](https://img.shields.io/badge/Port-Management-007ACC?style=flat-square)
 ![Service Config](https://img.shields.io/badge/Service-Config-007ACC?style=flat-square)
 ![DB Schema](https://img.shields.io/badge/DB-Schema_Design-316192?style=flat-square)
 ![Reverse Proxy](https://img.shields.io/badge/Reverse-Proxy-009639?style=flat-square)
 ![Log Rotation](https://img.shields.io/badge/Log-Rotation-555?style=flat-square)
-
----
-
-## `// pipeline · deutschmeister v7`
-
-```
-[ build ] → [ compose up ] → [ postgres init ] → [ scraper ] → [ :3100 ]
-    ✔             ✔                 ✔                ✔          ● LIVE
-```
 
 ---
 
@@ -65,29 +53,25 @@ Currently running **DeutschMeister** (Dockerized Next.js + NestJS + PostgreSQL) 
 <tr>
 <td width="50%">
 
-### 🐳 DeutschMeister *(v7 "Bauhaus")*
-Fully Dockerized Goethe exam prep platform.
+### 🐳 Language Learning Platform
+Fully Dockerized full-stack web application.
 
-**Infra:**
-- Docker Compose orchestration (3 services)
-- Bind-mounted news scraper → `./data/news/`
-- 9-table PostgreSQL schema
-- Production port: **3100**
-- Containerized cron-style scraper
+- Docker Compose multi-service orchestration
+- Containerized data scraping pipeline
+- Relational database with custom schema
+- API + frontend + DB — all containerized
 
 `Docker` `Compose` `PostgreSQL` `NestJS` `Next.js`
 
 </td>
 <td width="50%">
 
-### 🕷️ News Scraper Service
-Containerized data pipeline with persistent storage.
+### 🕷️ Data Scraper Service
+Containerized pipeline with persistent storage.
 
-**Infra:**
-- Bind mounts chosen over Docker named volumes
-- Targets nachrichtenleicht.de + MERLIN corpus
-- CC BY-SA 4.0 content lifecycle management
+- Bind mounts for flexible data persistence
 - Scheduled execution inside Docker
+- Automated content ingestion
 
 `Docker` `Bind Mounts` `Scheduled` `Node.js`
 
@@ -96,28 +80,26 @@ Containerized data pipeline with persistent storage.
 <tr>
 <td width="50%">
 
-### 📡 OpenRouter API Pipeline
+### 📡 API Integration Pipeline
 Rate-limit-aware integration with graceful degradation.
 
-**Infra:**
 - `Retry-After` header handling on 429s
-- 38-topic content pipeline (A2–C1)
-- Correct base URL enforcement (`/api/v1`)
+- Robust error handling & retry logic
+- Clean base URL + auth key management
 
-`OpenRouter` `API` `Rate limiting` `Node.js`
+`REST API` `Rate limiting` `Node.js`
 
 </td>
 <td width="50%">
 
-### 🗄️ Multi-User Browser App
+### 🗄️ Browser-Native App
 Zero-dependency client-side deployment.
 
-**Infra:**
-- localStorage for cross-session persistence
-- No build step, no bundler, no server
-- Tab-based multi-user state management
+- Client-side persistence, no server needed
+- No build step, no bundler
+- Multi-user state management in-browser
 
-`Browser-native` `localStorage` `Zero deps`
+`Browser-native` `Zero deps` `Vanilla JS`
 
 </td>
 </tr>
@@ -138,16 +120,10 @@ Zero-dependency client-side deployment.
 ## `// currently running`
 
 ```yaml
-containers:
-  - deutschmeister-frontend:  Up   →  :3100
-  - deutschmeister-api:       Up   →  NestJS
-  - deutschmeister-db:        Up   →  PostgreSQL (9 tables)
-  - news-scraper:             Scheduled
-
 focus:
-  - DeutschMeister v7 production hardening
+  - Production infra hardening
   - CI/CD pipeline automation
-  - Infra monitoring & log management
+  - Monitoring & log management
 
 location: Kerala, India 🇮🇳
 ```
@@ -161,5 +137,5 @@ location: Kerala, India 🇮🇳
 ---
 
 <div align="center">
-<sub><code>/* uptime: TBD · last deploy: May 2026 · Kerala, IN */</code></sub>
+<sub><code>/* last deploy: May 2026 · Kerala, IN */</code></sub>
 </div>
